@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic Mini Adventures</title>
+
+  <!-- Space Grotesk Font -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Space+Grotesk:300,regular,500,600,700" rel="stylesheet" /> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Besley:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" href="/images/ravenico.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">  
+</head>
+
+<body>
+  <div id="info-card" class="info-hidden">
+    <br>
+    <p>Per usare le API di ChatGPT è necessario creare una chiave segreta.        
+      La chiave permetterà di inviare le informazioni sull'ambientazione e le tue sclte per permettere all'IA di generare una storia ambientata nell'universo di Gothic.
+      Per creare una chiave bisogna registrarsi ed entrare nella piattaforma ufficiale di OpenAI:
+      <br>
+      <code>
+        <a href="https://platform.openai.com/" target=”_blank”>https://platform.openai.com/</a>
+      </code>
+      <br> 
+      Una volta dentro è necessario recarsi nella pagina delle API:
+      <br>
+      <code>
+        <a href="https://platform.openai.com/account/api-keys" target=”_blank”>https://platform.openai.com/account/api-keys</a>
+      </code>
+      <br>
+      Una volta cliccato il pulsante "Create new secret key" si aprirà una finestra di dialogo dove viene visualizzata la chiave alfanumerica.
+      E' molto importante copiarla subito e salvarla da qualche parte perché non è più possibile rivederla sulla piattaforma. Se dovessi smarrire la chiave delle API, l'unica soluzione è generarne un'altra.</p>
+      <button id="close-btn">Chiudi</button>
+  </div>
+  <!-- Intestazione -->
+  <header>
+    <h1>Gothic Mini Adventures</h1>
+    <p>Benvenuto nel mini gioco di avventura testuale, ambientato nell'universo di Gothic, basato su ChatGPT! </br>Quanto sopravviverai?</p>
+  </header>
+
+  <!-- Contenuto principale della pagina -->
+
+  <main class="container">    
+    <!-- Scelta del genere -->
+    <div class="genres">
+      <p>Inserisci la tua API key di OpenAI per poter giocare</p>
+      <div class="apiForm">
+      <input id="apiKey" type="text" placeholder="API KEY" required autofocus>
+      <button id="invia">Invia</button>  
+      <div class="info-btn-container">
+        <button id="info-btn">Come ottenere un'Api Key</button>
+      </div>
+    </div>
+      <div>
+      <p>Scegli un Genere: Horror, Cittadino, Terre Selvagge:</p>
+      </div>
+      <div class="genre" data-genre="Horror">🧟</div>
+      <div class="genre" data-genre="Cittadino">🏰</div>
+      <div class="genre" data-genre="Selvaggio">🏞️</div>    
+    </div>
+
+    <!-- Loader -->
+    <div class="loader hidden">
+      <img src="images/loader.gif" alt="loader">
+    </div>
+
+    <!-- Placeholder -->
+    <div id="placeholder"></div>
+
+    <!-- Gameover -->
+    <template id="gameover-template">
+      <div class="gameover">
+        <div class="gameover-icon">☠</div>
+        <h2>La tua avventura è terminata</h2>
+        <p class="gameover-message"></p>
+        <button>Rigioca</button>
+      </div>
+    </template>
+
+
+    <!-- Stage Template -->
+    <template id="stage-template">
+      <div class="stage">
+        <div class="stage-picture">
+        </div>
+        <div class="stage-content">
+          <p class="stage-description">
+          </p>
+          <div class="stage-actions"></div>          
+        </div>        
+      </div>
+    </template>
+    <button class="reload" onClick= window.location.reload(); >A volte ChatGPT ha problemi nell'interpretare le risposte: ricarica in caso di errore</button>
+  </main>
+
+  <!-- JavaScript -->
+  </main>
+  <script src="main.js"></script>
+</body>
+
+</html>

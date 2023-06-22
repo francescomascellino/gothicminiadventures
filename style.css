@@ -1,0 +1,262 @@
+/* ----- COLOR PALETTE ------
+  darkblue: rgb(1,21,50)
+  purple: rgb(76,2,53)
+  yellow: rgb(233,244,91)
+  lightblue: rgb(108,146,186)
+------------------------------ */
+
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Utilities */
+
+/* Generics */
+
+html {
+	color: rgb(0, 0, 0);
+	font-family: "Besley", serif;
+	min-height: 100%;
+	min-width: 100vw;
+}
+
+body {
+	background: linear-gradient(
+		to bottom,
+		rgb(255, 255, 255) 55%,
+		rgb(78, 78, 78) 100%
+	);
+	background-size: cover;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+main.container {
+	margin: 0 auto;
+	max-width: 512px;
+}
+
+/* # Header */
+
+header {
+	color: rgb(255, 255, 255);
+	background: linear-gradient(to bottom, rgb(3, 3, 3) 5%, rgb(68, 68, 68) 80%);
+	text-align: center;
+	padding: 32px;
+}
+
+h1 {
+	font-size: 32px;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+p {
+	font-size: 1rem;
+	/* margin-top: 10px; */
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+/* # Genres */
+
+.genres {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 16px;
+	gap: 10px;
+}
+
+.genre {
+	width: 100px;
+	height: 100px;
+	font-size: 40px;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid rgb(0, 0, 0);
+	box-shadow: 2px 2px 5px rgb(0, 0, 0);
+	cursor: pointer;
+	border-radius: 10%;
+}
+
+.genre:hover {
+	background-color: rgba(27, 27, 27, 0.7);
+}
+
+/* # Game started */
+
+.game-started h1 {
+	font-size: 16px;
+}
+
+.game-started header {
+	padding: 16px;
+}
+
+.game-started header p,
+.game-started .genres {
+	display: none;
+}
+
+/* # Loader */
+
+.loader {
+	height: 512px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: none;
+}
+
+.loader img {
+	width: 300px;
+}
+
+.hidden {
+	display: none;
+}
+
+/* # Gameover */
+
+.gameover {
+	text-align: center;
+	padding: 32px;
+}
+
+.gameover-icon {
+	font-size: 60px;
+}
+
+button {
+	margin: 10px 0;
+	padding: 16px;
+	width: 100%;
+	font-size: 20px;
+	font-family: "Besley", serif;
+	border: 2px solid rgb(0, 0, 0);
+	background-color: transparent;
+	box-shadow: 2px 2px 5px rgb(0, 0, 0);
+	color: rgb(0, 0, 0);
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+button:hover {
+	background-color: rgba(27, 27, 27, 0.7);
+}
+
+/* # Stage */
+
+.stage-picture {
+	min-height: 300px;
+	background-image: url("images/loader.gif");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 300px;
+}
+
+.stage-picture img {
+	max-width: 100%;
+}
+
+.stage-content {
+	padding: 16px;
+	position: relative;
+	top: -10px;
+}
+
+/* Bottone di reload */
+
+.reload {
+	font-size: smaller;
+}
+
+/* Form di immissione API Key */
+
+.apiForm {
+	display: grid;
+	grid-template-columns: 3fr 1fr 4fr;
+	display: inline-block;
+}
+
+#apiKey {
+	font-family: "Besley", serif;
+	font-size: smaller;
+	padding: 0.2rem;
+	box-shadow: 2px 2px 5px rgb(0, 0, 0);
+	flex-grow: 8;
+}
+
+#invia {
+	font-size: smaller;
+	padding: 0.2rem;
+	margin-left: 1rem;
+	width: 4rem;
+}
+
+/* Bottone Modale informazioni */
+
+.info-btn-container {
+	display: flex;
+	justify-content: center;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#info-btn {
+	font-size: smaller;
+	padding: 0.2rem;
+}
+
+/* Modale informazioni */
+
+#info-card {
+	background-color: hsla(0, 0%, 0%, 0.938);
+	color: white;
+	text-align: center;
+	font-size: small;
+	position: absolute;
+	/* position: fixed; */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 10px auto;
+	padding: 10px;
+	max-width: 512px;
+	/* max-height: 100%; */
+	max-height: fit-content;
+	z-index: 4;
+	box-shadow: 2px 2px 5px rgb(0, 0, 0);
+	border-radius: 10px;
+}
+
+.info-hidden {
+	visibility: hidden;
+}
+
+code {
+	background-color: whitesmoke;
+	border-radius: 5px;
+	padding: 0.2rem;
+}
+
+a {
+	color: black;
+}
+
+/* Bottone di chiusura della modale */
+
+#close-btn {
+	font-size: smaller;
+	padding: 0.2rem;
+	width: 4rem;
+	background-color: whitesmoke;
+}
